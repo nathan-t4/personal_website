@@ -70,18 +70,22 @@ export default function ProjectPage({ params }) {
 
           <div className="pt-8 border-slate-200 dark:border-slate-700">
             <div className="flex gap-4">
-              <a
-                href={frontmatter.demo}
-                className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200"
-              >
-                {frontmatter.technologies.includes('Research') ? 'Paper' : 'View Live Demo'}
-              </a>
-              <a
-                href={frontmatter.source}
-                className="border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200"
-              >
-                View Source Code
-              </a>
+              {frontmatter.demo && frontmatter.demo !== '#' && (
+                <a
+                  href={frontmatter.demo}
+                  className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200"
+                >
+                  {frontmatter.technologies.includes('Research') ? 'Paper' : 'View Live Demo'}
+                </a>
+              )}
+              {frontmatter.source && frontmatter.source !== '#' && (
+                <a
+                  href={frontmatter.source}
+                  className="border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200"
+                >
+                  View Source Code
+                </a>
+              )}
             </div>
           </div>
         </section>
@@ -94,7 +98,7 @@ export default function ProjectPage({ params }) {
               h1: ({ children }) => <h1 className="text-3xl font-bold text-slate-800 dark:text-white mb-6">{children}</h1>,
               h2: ({ children }) => <h2 className="text-2xl font-bold text-slate-800 dark:text-white mb-4 mt-8">{children}</h2>,
               h3: ({ children }) => <h3 className="text-xl font-semibold text-slate-800 dark:text-white mb-3 mt-6">{children}</h3>,
-              p: ({ children }) => <p className="text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">{children}</p>,
+              p: ({ children }) => <p className="text-lg text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">{children}</p>,
               ul: ({ children }) => <ul className="list-disc list-inside text-slate-600 dark:text-slate-300 mb-4 space-y-2">{children}</ul>,
               ol: ({ children }) => <ol className="list-decimal list-inside text-slate-600 dark:text-slate-300 mb-4 space-y-2">{children}</ol>,
               li: ({ children }) => <li className="text-slate-600 dark:text-slate-300">{children}</li>,

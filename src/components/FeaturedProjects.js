@@ -10,33 +10,36 @@ export default function FeaturedProjects() {
           Featured Projects
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {siteConfig.featuredProjects.map((project) => {
-            const projectId = project.link.split('/').pop();
-            const description = getProjectDescription(projectId);
-            
-            return (
-              <div
-                key={project.id}
-                className="bg-slate-50 dark:bg-slate-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
-              >
-                <div className="h-48 bg-slate-200 dark:bg-slate-700 flex items-center justify-center">
-                  <span className="text-slate-500 dark:text-slate-400 text-sm">
-                    Project Image
-                  </span>
+          {Object.keys(siteConfig.featuredProjects)
+            .map(Number)
+            .sort((a, b) => a - b)
+            .map((id) => {
+              const project = siteConfig.featuredProjects[id];
+              const projectId = project.link.split('/').pop();
+              const description = getProjectDescription(projectId);
+              return (
+                <div
+                  key={id}
+                  className="bg-slate-50 dark:bg-slate-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+                >
+                  <div className="h-48 bg-slate-200 dark:bg-slate-700 flex items-center justify-center">
+                    <span className="text-slate-500 dark:text-slate-400 text-sm">
+                      Project Image
+                    </span>
+                  </div>
+                  <div className="p-6">
+                    <Link href={project.link}>
+                      <h3 className="text-xl font-semibold text-slate-800 dark:text-white mb-3 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200">
+                        {project.title}
+                      </h3>
+                    </Link>
+                    <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+                      {description}
+                    </p>
+                  </div>
                 </div>
-                <div className="p-6">
-                  <Link href={project.link}>
-                    <h3 className="text-xl font-semibold text-slate-800 dark:text-white mb-3 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200">
-                      {project.title}
-                    </h3>
-                  </Link>
-                  <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
-                    {description}
-                  </p>
-                </div>
-              </div>
-            );
-          })}
+              );
+            })}
         </div>
       </div>
     </section>

@@ -6,18 +6,19 @@ export default function FeaturedProjectsServer() {
   // Get all active projects from markdown files
   const allProjects = getAllProjects();
 
-  // Filter featured projects to only include active ones
-  const activeFeaturedProjects = siteConfig.featuredProjects.filter((project) => {
-    const projectId = project.link.split('/').pop();
-    const markdownProject = allProjects.find(p => p.slug === projectId);
-    return markdownProject && markdownProject.frontmatter.active === true;
-  });
-
+  const activeFeaturedProjects = Object.keys(siteConfig.featuredProjects)
+    .map(Number)
+    .sort((a, b) => a - b)
+    .map((id) => siteConfig.featuredProjects[id])
+    .filter((project) => {
+      const projectId = project.link.split('/').pop();
+      const markdownProject = allProjects.find(p => p.slug === projectId);
+      return markdownProject && markdownProject.frontmatter.active === true;
+    });
 
   // Fetch project descriptions server-side
-  const projectsWithDescriptions = activeFeaturedProjects.map((project) => {
+  const projectsWithDescriptions = activeFeaturedProjects.map((project, idx) => {
     const projectId = project.link.split('/').pop();
-    
     try {
       const description = getProjectDescription(projectId);
       return { ...project, description };
@@ -32,9 +33,9 @@ export default function FeaturedProjectsServer() {
         Featured Projects
       </h3>
       <div className="grid md:grid-cols-2 gap-6">
-        {projectsWithDescriptions.map((project) => (
+        {projectsWithDescriptions.map((project, idx) => (
           <a
-            key={project.id}
+            key={project.link}
             href={project.link}
             className="group block bg-slate-50 dark:bg-slate-800 rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-200"
           >

@@ -4,6 +4,7 @@ import { siteConfig } from '@/lib/config';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import SocialLinks from '@/components/SocialLinks';
+import React from 'react';
 
 export default function CV() {
   return (
@@ -92,7 +93,12 @@ export default function CV() {
                   {edu.location}
                 </p>
                 <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
-                  {edu.description}
+                  {edu.description.split('\n').map((line, idx) => (
+                    <React.Fragment key={idx}>
+                      {line}
+                      <br />
+                    </React.Fragment>
+                  ))}
                 </p>
               </div>
             ))}
@@ -122,7 +128,12 @@ export default function CV() {
                   {job.location}
                 </p>
                 <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
-                  {job.description}
+                  {job.description.split('\n').map((line, idx) => (
+                    <React.Fragment key={idx}>
+                      {line}
+                      <br />
+                    </React.Fragment>
+                  ))}
                 </p>
               </div>
             ))}
@@ -152,7 +163,12 @@ export default function CV() {
                   {research.location}
                 </p>
                 <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
-                  {research.description}
+                  {research.description.split('\n').map((line, idx) => (
+                    <React.Fragment key={idx}>
+                      {line}
+                      <br />
+                    </React.Fragment>
+                  ))}
                 </p>
                 {research.publications && research.publications.length > 0 && (
                   <div>
@@ -193,7 +209,12 @@ export default function CV() {
                   {award.institution}
                 </p>
                 <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
-                  {award.description}
+                  {award.description.split('\n').map((line, idx) => (
+                    <React.Fragment key={idx}>
+                      {line}
+                      <br />
+                    </React.Fragment>
+                  ))}
                 </p>
               </div>
             ))}

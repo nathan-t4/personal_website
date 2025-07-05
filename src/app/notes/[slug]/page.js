@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Link from 'next/link';
 
 export async function generateStaticParams() {
   const slugs = getNoteSlugs();
@@ -95,12 +96,12 @@ export default function NotePage({ params }) {
 
         {/* Back to Notes */}
         <div className="border-t border-slate-200 dark:border-slate-700 pt-8">
-          <a
+          <Link
             href="/notes"
             className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium"
           >
             ← Back to Notes
-          </a>
+          </Link>
         </div>
       </main>
 

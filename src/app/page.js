@@ -34,7 +34,7 @@ export default function Home() {
           </h2>
           <div className="prose prose-slate dark:prose-invert max-w-none">
             <p className="text-lg text-slate-600 dark:text-slate-300 mb-4">
-              I received my MS from UT Austin in May 2025, and BS from UIUC in 2022. My master's thesis research was on developing neural port-Hamiltonian differential algebraic equations, with applications to scalable data-driven modeling of electrical networks. Current an autonomous aircraft operations research intern @ NASA Ames. 
+              I received my MS from UT Austin in May 2025, and BS from UIUC in 2022. My master&apos;s thesis research was on developing neural port-Hamiltonian differential algebraic equations, with applications to scalable data-driven modeling of electrical networks. Current an autonomous aircraft operations research intern @ NASA Ames. 
             </p>
             <p className="text-lg text-slate-600 dark:text-slate-300 mb-6">
               {/* TODO  */}

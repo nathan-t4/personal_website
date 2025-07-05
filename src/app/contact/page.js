@@ -35,8 +35,8 @@ export default function Contact() {
             Contact
           </h1>
           <p className="text-xl text-slate-600 dark:text-slate-300 leading-relaxed">
-            I'm always interested in new opportunities and exciting projects. 
-            Feel free to reach out!
+            I&apos;m always interested in new opportunities and exciting projects. 
+            Feel free to reach out if you&apos;d like to work together or just say hello!
           </p>
         </section>
 

@@ -137,7 +137,7 @@ export const siteConfig = {
       description: "Awarded to students with at least a 3.8 Illinois GPA and continual commitment to service and education."
     },
     {
-      title: "Dean's List",
+      title: "Dean&apos;s List",
       institution: "University of Illinois Urbana-Champaign",
       year: "2019-2022",
       description: "Awarded to undergraduate students in the top 20 percent of their college class."

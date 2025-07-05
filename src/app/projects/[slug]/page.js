@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Link from 'next/link';
 
 export async function generateStaticParams() {
   const slugs = getProjectSlugs();
@@ -22,12 +23,12 @@ export default function ProjectPage({ params }) {
           <h1 className="text-2xl font-bold text-slate-800 dark:text-white mb-4">
             Project Not Found
           </h1>
-          <a
+          <Link
             href="/projects"
             className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300"
           >
             ← Back to Projects
-          </a>
+          </Link>
         </div>
       </div>
     );
@@ -44,9 +45,9 @@ export default function ProjectPage({ params }) {
         {/* Project Header */}
         <section className="mb-12">
           <div className="flex items-center space-x-4 mb-6">
-            <a href="/projects" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300">
+            <Link href="/projects" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300">
               ← Back to Projects
-            </a>
+            </Link>
           </div>
           <h1 className="text-4xl sm:text-5xl font-bold text-slate-800 dark:text-white mb-4">
             {frontmatter.title}

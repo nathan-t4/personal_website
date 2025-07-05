@@ -24,3 +24,46 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Print styles for CV */
+@media print {
+  /* Hide elements that shouldn't be printed */
+  header, 
+  footer,
+  button {
+    display: none !important;
+  }
+  
+  /* Ensure good contrast for printing */
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  /* Remove dark mode styles for print */
+  * {
+    background: white !important;
+    color: black !important;
+    border-color: #e5e7eb !important;
+  }
+  
+  /* Ensure proper page breaks */
+  .cv-section {
+    page-break-inside: avoid;
+  }
+  
+  /* Add some spacing for print */
+  main {
+    padding: 0 !important;
+    max-width: none !important;
+  }
+  
+  /* Make text readable in print */
+  h1, h2, h3 {
+    color: black !important;
+  }
+  
+  p, span, div {
+    color: black !important;
+  }
+}

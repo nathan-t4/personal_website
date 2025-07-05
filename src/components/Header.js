@@ -1,4 +1,5 @@
 import { siteConfig } from '@/lib/config';
+import Link from 'next/link';
 
 export default function Header({ currentPage = '', showTitle = true }) {
   const navItems = [
@@ -15,16 +16,16 @@ export default function Header({ currentPage = '', showTitle = true }) {
         <div className="flex justify-between items-center h-16">
           {showTitle ? (
             <div className="text-xl font-bold text-slate-800 dark:text-white">
-              <a href="/" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+              <Link href="/" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                 {siteConfig.title || siteConfig.name}
-              </a>
+              </Link>
             </div>
           ) : (
             <div></div>
           )}
           <nav className="flex space-x-8">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.label}
                 href={item.href}
                 className={`text-sm font-medium transition-colors ${
@@ -34,7 +35,7 @@ export default function Header({ currentPage = '', showTitle = true }) {
                 }`}
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </nav>
         </div>

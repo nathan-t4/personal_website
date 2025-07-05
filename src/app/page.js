@@ -18,7 +18,7 @@ export default function Home() {
             {siteConfig.name}
           </h1>
           <p className="text-xl text-slate-600 dark:text-slate-300">
-            Machine learning research engineer with two years of academic research (MS @ UT Austin) and internship experience (NASA). Seeking full-time position. 
+            Machine learning research engineer with two years of academic research (MS @ UT Austin) and internship experience (NASA). Seeking full-time machine learning engineer position. 
           </p>
         </section>
         

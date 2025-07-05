@@ -27,10 +27,10 @@ export default function CV() {
             <SocialLinks />
             <button
               onClick={() => window.open(siteConfig.resume, '_blank')}
-              className="flex items-center space-x-2 text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-white transition-colors"
+              className="flex items-center space-x-2 px-4 py-2 bg-slate-100 dark:bg-slate-800 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
             >
               <span className="text-lg">📥</span>
-              <span className="font-medium">Download PDF</span>
+              <span className="text-slate-700 dark:text-slate-300 font-medium">Download PDF</span>
             </button>
           </div>
 

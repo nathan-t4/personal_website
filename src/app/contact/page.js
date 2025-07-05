@@ -56,20 +56,20 @@ export default function Contact() {
                     <EmailLink />
                   </div>
                 </div>
-                <div className="flex items-center space-x-3">
+                {/* <div className="flex items-center space-x-3">
                   <span className="text-2xl">📍</span>
                   <div>
                     <p className="text-slate-600 dark:text-slate-300">Location</p>
-                    <p className="text-slate-800 dark:text-white">San Francisco, CA</p>
+                    <p className="text-slate-800 dark:text-white">{siteConfig.location}</p>
                   </div>
-                </div>
-                <div className="flex items-center space-x-3">
+                </div> */}
+                {/* <div className="flex items-center space-x-3">
                   <span className="text-2xl">⏰</span>
                   <div>
                     <p className="text-slate-600 dark:text-slate-300">Availability</p>
                     <p className="text-slate-800 dark:text-white">Open to new opportunities</p>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
 

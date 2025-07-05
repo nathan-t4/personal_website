@@ -2,10 +2,11 @@ export const siteConfig = {
   name: "Nathan Tsao",
   title: "",
   description: "Personal website",
-  url: "https://yourname.dev",
-  ogImage: "https://yourname.dev/og.jpg",
+  url: "https://www.nathantsao.com",
+  ogImage: "https://www.nathantsao.com/og.svg",
   resume: "/files/Nathan_Tsao_resume.pdf",
   emailAddress: "tsao.nathan@gmail.com",
+  location: "Bay Area, CA",
   socialLinks: [
     {
       name: "GitHub",

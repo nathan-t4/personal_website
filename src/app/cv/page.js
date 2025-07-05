@@ -18,13 +18,13 @@ export default function CV() {
             {siteConfig.name}
           </h1>
           <p className="text-xl text-slate-600 dark:text-slate-300">
-          Machine learning research engineer with two years of academic research (MS @ UT Austin) and internship experience (NASA). Seeking full-time position. 
+            {siteConfig.heroBlurb}
           </p>
         </section>
         {/* Contact Info */}
         <section className="mb-8">
           <div className="flex flex-wrap gap-4 mb-6">
-            <SocialLinks />
+            <SocialLinks excludeCV />
             <button
               onClick={() => window.open(siteConfig.resume, '_blank')}
               className="flex items-center space-x-2 px-4 py-2 bg-slate-100 dark:bg-slate-800 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"

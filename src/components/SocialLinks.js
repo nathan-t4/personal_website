@@ -3,7 +3,7 @@
 import { siteConfig } from '@/lib/config';
 import Image from 'next/image';
 
-export default function SocialLinks({ variant = 'default' }) {
+export default function SocialLinks({ variant = 'default', excludeCV = false }) {
   const getIcon = (iconName) => {
     switch (iconName) {
       case 'github':
@@ -27,9 +27,13 @@ export default function SocialLinks({ variant = 'default' }) {
     ? 'text-slate-800 dark:text-white font-medium'
     : 'text-slate-700 dark:text-slate-300 font-medium';
 
+  const linksToShow = excludeCV
+    ? siteConfig.socialLinks.filter((link) => link.name !== 'CV')
+    : siteConfig.socialLinks;
+
   return (
     <div className={containerClasses}>
-      {siteConfig.socialLinks.map((link) => (
+      {linksToShow.map((link) => (
         <a
           key={link.name}
           href={link.url}

@@ -7,6 +7,8 @@ export const siteConfig = {
   resume: "/files/Nathan_Tsao_resume.pdf",
   emailAddress: "tsao.nathan@gmail.com",
   location: "Bay Area, CA",
+  heroBlurb: "Machine learning research engineer with two years of academic research (MS @ UT Austin) and internship experience (NASA). Seeking full-time machine learning engineer position.",
+  about: "I received my MS from UT Austin in May 2025, and BS from UIUC in 2022. My master's thesis research was on developing neural port-Hamiltonian differential algebraic equations, with applications to scalable data-driven modeling of electrical networks. Current an autonomous aircraft operations research intern @ NASA Ames.",
   socialLinks: [
     {
       name: "GitHub",

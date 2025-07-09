@@ -4,7 +4,7 @@ export const siteConfig = {
   description: "Personal website",
   url: "https://www.nathantsao.com",
   ogImage: "https://www.nathantsao.com/og.svg",
-  resume: "/files/Nathan_Tsao_resume.pdf",
+  resume: "/files/Nathan_Tsao_resume_public.pdf",
   emailAddress: "tsao.nathan@gmail.com",
   location: "Bay Area, CA",
   heroBlurb: "Machine learning research engineer with two years of academic research (MS @ UT Austin) and internship experience (NASA). Seeking full-time machine learning engineer position.",

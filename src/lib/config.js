@@ -32,18 +32,20 @@ export const siteConfig = {
       icon: "📄"
     }
   ],
-  showNSkills: 4,
+  showNSkills: 6,
   skills: [
     'Deep Learning',
     'Generative AI',
     'Python',
     'PyTorch',
+    'Robotics',
+    'JAX',
+    'Ray',
     'Linux',
-    'Dart',
-    'Jax',
     'Docker',
     'Stable-Baselines3',
-    'Git'
+    'Git',
+    'Dart',
   ],
   featuredProjects: {
     1: {
@@ -52,11 +54,16 @@ export const siteConfig = {
       link: "/projects/causal_diffusion"
     },
     2: {
+      title: "Traffic Following Autonomous Aircraft",
+      image: "/projects/traffic_following/sim.png",
+      link: "/projects/traffic_following"
+    },
+    3: {
       title: "Human Activity Recognition with Batteryless Sensors",
       image: "/projects/batteryless/architecture.png",
       link: "/projects/batteryless"
     },
-    3: {
+    4: {
       title: "Neural Port-Hamiltonian Differential Algebraic Equations",
       image: "/projects/nphdae/architecture.png",
       link: "/projects/nphdae"
@@ -68,7 +75,7 @@ export const siteConfig = {
       company: "NASA Ames Research Center",
       location: "Mountain View, CA",
       period: "June 2025 - August 2025",
-      description: "Researching how traffic following behavior in dense airspaces effect aircraft performance metrics. \n Developing GPU-accelerated multi-modal traffic simulation of the Bay Area to guide infrastructure development of Unmanned Aerial Vehicles."
+      description: "Researching how traffic following behavior among autonomous aircraft in dense airspaces effects travel time and safety. \n Developing GPU-accelerated multi-modal traffic simulation of the Bay Area to guide infrastructure development of Unmanned Aerial Vehicles."
     },
     {
       title: "Hardware Engineering Intern",
@@ -86,7 +93,7 @@ export const siteConfig = {
       period: "December 2023 - May 2025",
       description: "Developed a scalable electrical circuit modeling framework using compositional machine learning models. \n Created low-energy and fast-inference human activity recognition algorithm for batteryless sensors.",
       publications: [
-        "Cyrus Neary*, Nathan Tsao*, and Ufuk Topcu. Neural Port-Hamiltonian Differential Algebraic Equations for Compositional Learning of Electrical Networks. Under review at CDC 2025.",
+        "Cyrus Neary*, Nathan Tsao*, and Ufuk Topcu. Neural Port-Hamiltonian Differential Algebraic Equations for Compositional Learning of Electrical Networks. Accepted to CDC 2025.",
         "Geffen Cooper*, Nathan Tsao*, Filippos Fotiadis, Ufuk Topcu, Radu Marculescu. Learning from Sparse and Asynchronous Data Streams for Batteryless Sensors. Under review at NeurIPS 2025."
       ]
     },

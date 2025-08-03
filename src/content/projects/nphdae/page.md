@@ -8,7 +8,7 @@ source: "https://github.com/nathan-t4/NPHDAE"
 description: "Developed compositional learning algorithms for coupled dynamical systems."
 active: true
 ---
-*In submission to CDC 2025.*
+*Accepted to CDC 2025.*
 
 ## Abstract
 

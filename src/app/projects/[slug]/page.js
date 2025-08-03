@@ -103,14 +103,37 @@ export default function ProjectPage({ params }) {
               ol: ({ children }) => <ol className="list-decimal list-inside text-slate-600 dark:text-slate-300 mb-4 space-y-2">{children}</ol>,
               li: ({ children }) => <li className="text-slate-600 dark:text-slate-300">{children}</li>,
               strong: ({ children }) => <strong className="font-semibold text-slate-800 dark:text-white">{children}</strong>,
-              a: ({ href, children }) => (
-                <a 
-                  href={href} 
-                  className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 underline"
-                >
-                  {children}
-                </a>
-              ),
+              a: ({ href, children }) => {
+                const youtubeMatch = href.match(
+                  /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/
+                );
+
+                if (youtubeMatch) {
+                  const videoId = youtubeMatch[1];
+                  return (
+                    <div className="my-6">
+                      <iframe
+                        width="560"
+                        height="315"
+                        src={`https://www.youtube.com/embed/${videoId}`}
+                        title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        className="w-full aspect-video rounded-lg shadow-lg"
+                      ></iframe>
+                    </div>
+                  );
+                }
+
+                return (
+                  <a 
+                    href={href} 
+                    className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 underline"
+                  >
+                    {children}
+                  </a>
+                );
+              }
             }}
           >
             {content}

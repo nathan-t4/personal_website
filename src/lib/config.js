@@ -7,8 +7,9 @@ export const siteConfig = {
   resume: "/files/Nathan_Tsao_resume_public.pdf",
   emailAddress: "tsao.nathan@gmail.com",
   location: "Bay Area, CA",
-  heroBlurb: "Machine learning research engineer with two years of academic research (MS @ UT Austin) and internship experience (NASA). Seeking full-time machine learning engineer position.",
-  about: "I received my MS from UT Austin in May 2025, and BS from UIUC in 2022. My master's thesis research was on developing neural port-Hamiltonian differential algebraic equations, with applications to scalable data-driven modeling of electrical networks. Current an autonomous aircraft operations research intern @ NASA Ames.",
+  heroBlurb: "Applied Machine Learning Engineer with experience in generative AI, reinforcement learning, and scalable machine learning. Seeking full-time ML Engineer positions.",
+  about: "I received my MS from UT Austin in 2025, and BS from UIUC in 2022. During my Master's studies, I developed machine learning algorithms for scalable electrical network modeling and human activity recognition using batteryless sensors as a graduate research assistant. I was also recently a research intern at NASA Ames Research Center (Summer 2025). Interested in deep learning, generative AI, and humanoid robots.",
+  currentlyWorking: "Working on murcanti: e-commerce mobile app for door-to-door shipping between Taiwan & U.S.!",
   socialLinks: [
     {
       name: "GitHub",
@@ -75,14 +76,14 @@ export const siteConfig = {
       company: "NASA Ames Research Center",
       location: "Mountain View, CA",
       period: "June 2025 - August 2025",
-      description: "Researching how traffic following behavior among autonomous aircraft in dense airspaces effects travel time and safety. \n Developing GPU-accelerated multi-modal traffic simulation of the Bay Area to guide infrastructure development of Unmanned Aerial Vehicles."
+      description: "Researching how reinforcement learning driven traffic following behavior among autonomous aircraft in dense airspaces improves travel time and safety."
     },
     {
       title: "Hardware Engineering Intern",
       company: "Berkeley Lights",
       location: "Berkeley, CA",
       period: "June 2022 - September 2022",
-      description: "Developed mechanical and electrical design of temperature calibration sensor for the OptoSelect chip. \n Automated data acquisition and calibration pipeline using Python scripts."
+      description: "Automated data-acquisition and calibration pipeline in Python.\n Designed hardware and software integration for custom temperature calibration sensors."
     }
   ],
   researchExperience: [
@@ -91,7 +92,7 @@ export const siteConfig = {
       institution: "University of Texas at Austin: Autonomous Systems Group",
       location: "Austin, TX",
       period: "December 2023 - May 2025",
-      description: "Developed a scalable electrical circuit modeling framework using compositional machine learning models. \n Created low-energy and fast-inference human activity recognition algorithm for batteryless sensors.",
+      description: "Designed compositional machine learning frameworks for differential-algebraic systems, enabling scalable modeling of electrical networks.\n Developed a low-power, low-latency human activity recognition model optimized for batteryless sensors, resulting in 15-50% relative improvement over baselines.",
       publications: [
         "Cyrus Neary*, Nathan Tsao*, and Ufuk Topcu. Neural Port-Hamiltonian Differential Algebraic Equations for Compositional Learning of Electrical Networks. Accepted to CDC 2025.",
         "Geffen Cooper*, Nathan Tsao*, Filippos Fotiadis, Ufuk Topcu, Radu Marculescu. Learning from Sparse and Asynchronous Data Streams for Batteryless Sensors. Under review at NeurIPS 2025."
@@ -102,7 +103,7 @@ export const siteConfig = {
       institution: "University of California, Berkeley: Hybrid Robotics Group",
       location: "Berkeley, CA",
       period: "May 2022 - January 2023",
-      description: "Led team to design the hardware and RL controller design of an actuated tail for quadruped robots. \n Created inexpensive 3D-printed quasi-direct-drive actuators with custom FOC motor controller.",
+      description: "Implemented a reinforcement learning-based locomotion balancing controller for tailed quadruped robots.\n Integrated hardware with custom actuators and motor controllers for robust RL deployment.",
       publications: []
     },
     {
@@ -110,24 +111,24 @@ export const siteConfig = {
       institution: "University of Illinois Urbana-Champaign: RoboDesign Lab",
       location: "Urbana, IL",
       period: "January 2022 - May 2022",
-      description: "Prototyped a low-cost force-sensing humanoid robot foot using elastomers and Hall sensors.",
+      description: "Prototyped a low-cost force-sensing humanoid robot foot using elastomers and Hall sensors.\n Applied Gaussian processes to estimate force signals in humanoid robot feet.",
       publications: []
     }
   ],
   education: [
     {
-      degree: "Master of Science in Mechanical Engineering",
+      degree: "Master of Science",
       school: "University of Texas at Austin",
       location: "Austin, TX",
       period: "August 2023 - May 2025",
-      description: "GPA: 3.74. \n Thesis: Neural Port-Hamiltonian Differential Algebraic Equations"
+      description: "GPA: 3.74. \n Thesis: Neural Port-Hamiltonian Differential Algebraic Equations \n Major: Mechanical Engineering (ML-focused)"
     },
     {
-      degree: "Bachelor of Science in Mechanical Engineering",
+      degree: "Bachelor of Science",
       school: "University of Illinois Urbana-Champaign",
       location: "Urbana, IL",
       period: "August 2019 - May 2022",
-      description: "GPA: 3.87"
+      description: "GPA: 3.87 \n Major: Mechanical Engineering"
     }
   ],
   relevantCoursework: [

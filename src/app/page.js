@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import FeaturedProjectsServer from '@/components/FeaturedProjectsServer';
 import SocialLinks from '@/components/SocialLinks';
+import React from 'react';
 
 export default function Home() {
   return (
@@ -33,11 +34,8 @@ export default function Home() {
             About Me
           </h2>
           <div className="prose prose-slate dark:prose-invert max-w-none">
-            <p className="text-lg text-slate-600 dark:text-slate-300 mb-4">
-              {siteConfig.about}
-            </p>
             <p className="text-lg text-slate-600 dark:text-slate-300 mb-6">
-              {/* TODO  */}
+              {siteConfig.about}
             </p>
             <div className="flex flex-wrap gap-2 mb-8">
               {siteConfig.skills.slice(0, siteConfig.showNSkills).map((skill) => (
@@ -60,3 +58,23 @@ export default function Home() {
     </div>
   );
 }
+
+/* 
+<p className="text-lg text-slate-600 dark:text-slate-300 mb-6">
+  {siteConfig.currentlyWorking.split('murcanti').map((part, index, array) => (
+    <React.Fragment key={index}>
+      {part}
+      {index < array.length - 1 && (
+        <a
+          href="https://murcanti.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 underline"
+        >
+          murcanti
+        </a>
+      )}
+    </React.Fragment>
+  ))}
+</p>
+*/

@@ -21,6 +21,17 @@ export default function CV() {
           <p className="text-xl text-slate-600 dark:text-slate-300">
             {siteConfig.heroBlurb}
           </p>
+          <br></br>
+          <p className="text-xl text-slate-600 dark:text-slate-300">
+            {"Please download my "}
+            <button
+              onClick={() => window.open(siteConfig.resume, '_blank')}
+              className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 underline cursor-pointer font-medium"
+            >
+              CV
+            </button>
+            {" for the most updated version (08/17/2025)."}
+          </p>
         </section>
         {/* Contact Info */}
         <section className="mb-8">
@@ -31,7 +42,7 @@ export default function CV() {
               className="flex items-center space-x-2 px-4 py-2 bg-slate-100 dark:bg-slate-800 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
             >
               <span className="text-lg">📥</span>
-              <span className="text-slate-700 dark:text-slate-300 font-medium">Download PDF</span>
+              <span className="text-slate-700 dark:text-slate-300 font-medium">Download CV</span>
             </button>
           </div>
 

@@ -29,7 +29,11 @@ export default function SocialLinks({ variant = 'default', excludeCV = false }) 
 
   const linksToShow = excludeCV
     ? siteConfig.socialLinks.filter((link) => link.name !== 'CV')
-    : siteConfig.socialLinks;
+    : siteConfig.socialLinks.map(link => 
+        link.name === 'CV' 
+          ? { ...link, url: siteConfig.resume }  // Use PDF URL instead of /cv
+          : link
+      );
 
   return (
     <div className={containerClasses}>
@@ -37,6 +41,8 @@ export default function SocialLinks({ variant = 'default', excludeCV = false }) 
         <a
           key={link.name}
           href={link.url}
+          target={link.name === 'CV' ? '_blank' : undefined}
+          rel={link.name === 'CV' ? 'noopener noreferrer' : undefined}
           onClick={link.isEmail ? (e) => {
             e.preventDefault();
             window.location.href = 'mailto:' + siteConfig.emailAddress;

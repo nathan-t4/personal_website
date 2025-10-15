@@ -4,12 +4,12 @@ export const siteConfig = {
   description: "Personal website",
   url: "https://www.nathantsao.com",
   ogImage: "https://www.nathantsao.com/og.svg",
-  resume: "/files/Nathan_Tsao_resume_public.pdf",
+  resume: "/files/Nathan_Tsao_resume.pdf",
   emailAddress: "tsao.nathan@gmail.com",
-  location: "Bay Area, CA",
+  location: "Taipei, Taiwan",
   heroBlurb: "Applied Machine Learning Engineer with experience in generative AI, reinforcement learning, and scalable machine learning. Seeking full-time ML Engineer positions.",
-  about: "I received my MS from UT Austin in 2025, and BS from UIUC in 2022. During my Master's studies, I developed machine learning algorithms for scalable electrical network modeling and human activity recognition using batteryless sensors as a graduate research assistant. I was also recently a research intern at NASA Ames Research Center (Summer 2025). Interested in deep learning, generative AI, and humanoid robots.",
-  currentlyWorking: "Working on murcanti: e-commerce mobile app for door-to-door shipping between Taiwan & U.S.!",
+  about: "I received my MS from UT Austin in 2025, and BS from UIUC in 2022. During my MS, I developed machine learning algorithms for scalable electrical network modeling and human activity recognition using batteryless sensors. This past summer (2025), I was a research intern at NASA Ames Research Center. Interested in deep learning, generative AI, and humanoid robots.",
+  currentlyWorking: "Building <a href='https://murcanti.com' target='_blank' rel='noopener noreferrer' class='text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 underline'>Murcanti</a> for Taiwan-U.S. shipping. Try the <a href='https://murcanti.com/search' target='_blank' rel='noopener noreferrer' class='text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 underline'>AI chatbot</a>!",
   socialLinks: [
     {
       name: "GitHub",
@@ -39,7 +39,8 @@ export const siteConfig = {
     'Generative AI',
     'Python',
     'PyTorch',
-    'Robotics',
+    'AWS',
+    'HuggingFace',
     'JAX',
     'Ray',
     'Linux',
@@ -76,14 +77,14 @@ export const siteConfig = {
       company: "NASA Ames Research Center",
       location: "Mountain View, CA",
       period: "June 2025 - August 2025",
-      description: "Researching how reinforcement learning driven traffic following behavior among autonomous aircraft in dense airspaces improves travel time and safety."
+      description: "Developed a multi-agent path-planning framework for autonomous aircraft using reinforcement learning (Ray RLlib) to minimize average travel times."
     },
     {
       title: "Hardware Engineering Intern",
       company: "Berkeley Lights",
       location: "Berkeley, CA",
       period: "June 2022 - September 2022",
-      description: "Automated data-acquisition and calibration pipeline in Python.\n Designed hardware and software integration for custom temperature calibration sensors."
+      description: "Automated data-acquisition and calibration pipelines in Python for temperature calibration of OptoSelect chip"
     }
   ],
   researchExperience: [
@@ -92,10 +93,10 @@ export const siteConfig = {
       institution: "University of Texas at Austin: Autonomous Systems Group",
       location: "Austin, TX",
       period: "December 2023 - May 2025",
-      description: "Designed compositional machine learning frameworks for differential-algebraic systems, enabling scalable modeling of electrical networks.\n Developed a low-power, low-latency human activity recognition model optimized for batteryless sensors, resulting in 15-50% relative improvement over baselines.",
+      description: "Designed and implemented compositional machine learning frameworks for differential-algebraic systems in JAX, enabling scalable modeling of electrical networks with >10x accuracy over baselines. \n Developed a low-power human activity recognition model optimized for batteryless sensors using PyTorch, resulting in 15-50\% relative improvement over baselines.",
       publications: [
         "Cyrus Neary*, Nathan Tsao*, and Ufuk Topcu. Neural Port-Hamiltonian Differential Algebraic Equations for Compositional Learning of Electrical Networks. Accepted to CDC 2025.",
-        "Geffen Cooper*, Nathan Tsao*, Filippos Fotiadis, Ufuk Topcu, Radu Marculescu. Learning from Sparse and Asynchronous Data Streams for Batteryless Sensors. Under review at NeurIPS 2025."
+        "Geffen Cooper*, Nathan Tsao*, Filippos Fotiadis, Ufuk Topcu, Radu Marculescu. Learning from Sparse and Asynchronous Data Streams for Batteryless Sensors. Preprint."
       ]
     },
     {
@@ -103,7 +104,7 @@ export const siteConfig = {
       institution: "University of California, Berkeley: Hybrid Robotics Group",
       location: "Berkeley, CA",
       period: "May 2022 - January 2023",
-      description: "Implemented a reinforcement learning-based locomotion balancing controller for tailed quadruped robots.\n Integrated hardware with custom actuators and motor controllers for robust RL deployment.",
+      description: "Implemented a reinforcement learning locomotion balancing controller for tailed quadruped robots using PyTorch and IsaacGym. \n Developed 3D printed robotic actuators with custom motor controllers written in C++.",
       publications: []
     },
     {
@@ -111,7 +112,7 @@ export const siteConfig = {
       institution: "University of Illinois Urbana-Champaign: RoboDesign Lab",
       location: "Urbana, IL",
       period: "January 2022 - May 2022",
-      description: "Prototyped a low-cost force-sensing humanoid robot foot using elastomers and Hall sensors.\n Applied Gaussian processes to estimate force signals in humanoid robot feet.",
+      description: "Designed a <\$50 USD force-sensing humanoid robot foot prototype with Hall sensors using LabVIEW. \n Estimated humanoid robot foot force signals using Gaussian processes with scikit-learn.",
       publications: []
     }
   ],

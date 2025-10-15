@@ -48,6 +48,13 @@ export default function Home() {
               ))}
             </div>
           </div>
+
+          <div className="border border-slate-200 dark:border-slate-700 rounded-lg p-4 mb-6 bg-slate-50 dark:bg-slate-800/50">
+            <p 
+              className="text-lg text-slate-600 dark:text-slate-300"
+              dangerouslySetInnerHTML={{ __html: siteConfig.currentlyWorking }}
+            />
+          </div>
         </section>
 
         {/* Featured Projects */}
@@ -58,23 +65,3 @@ export default function Home() {
     </div>
   );
 }
-
-/* 
-<p className="text-lg text-slate-600 dark:text-slate-300 mb-6">
-  {siteConfig.currentlyWorking.split('murcanti').map((part, index, array) => (
-    <React.Fragment key={index}>
-      {part}
-      {index < array.length - 1 && (
-        <a
-          href="https://murcanti.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 underline"
-        >
-          murcanti
-        </a>
-      )}
-    </React.Fragment>
-  ))}
-</p>
-*/

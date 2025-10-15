@@ -15,13 +15,13 @@ export default function CV() {
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Hero Section */}
         <section className="mb-4">
-          <h1 className="text-4xl sm:text-5xl font-bold text-slate-800 dark:text-white mb-6">
+          {/* <h1 className="text-4xl sm:text-5xl font-bold text-slate-800 dark:text-white mb-6">
             {siteConfig.name}
           </h1>
           <p className="text-xl text-slate-600 dark:text-slate-300">
             {siteConfig.heroBlurb}
           </p>
-          <br></br>
+          <br></br>  */}
           <p className="text-xl text-slate-600 dark:text-slate-300">
             {"Please download my "}
             <button
@@ -30,11 +30,11 @@ export default function CV() {
             >
               CV
             </button>
-            {" for the most updated version (08/17/2025)."}
+            {" for the most updated version (10/15/2025)."}
           </p>
         </section>
         {/* Contact Info */}
-        <section className="mb-8">
+        {/* <section className="mb-8">
           <div className="flex flex-wrap gap-4 mb-6">
             <SocialLinks excludeCV />
             <button
@@ -44,10 +44,10 @@ export default function CV() {
               <span className="text-lg">📥</span>
               <span className="text-slate-700 dark:text-slate-300 font-medium">Download CV</span>
             </button>
-          </div>
+          </div> */}
 
           {/* Skills */}
-          <div>
+          {/* <div>
             <h2 className="text-2xl font-bold text-slate-800 dark:text-white mb-4">
               Skills
             </h2>
@@ -61,10 +61,10 @@ export default function CV() {
                 </span>
               ))}
             </div>
-          </div>
+          </div> */}
 
           {/* Relevant Coursework */}
-          <div className="mt-8">
+          {/* <div className="mt-8">
             <h2 className="text-2xl font-bold text-slate-800 dark:text-white mb-4">
               Relevant Coursework
             </h2>
@@ -79,10 +79,10 @@ export default function CV() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Education */}
-        <section className="mb-12 cv-section">
+        {/* <section className="mb-12 cv-section">
           <h2 className="text-2xl font-bold text-slate-800 dark:text-white mb-6">
             Education
           </h2>
@@ -114,10 +114,10 @@ export default function CV() {
               </div>
             ))}
           </div>
-        </section>
+        </section> */}
 
         {/* Work Experience */}
-        <section className="mb-12 cv-section">
+        {/* <section className="mb-12 cv-section">
           <h2 className="text-2xl font-bold text-slate-800 dark:text-white mb-6">
             Work Experience
           </h2>
@@ -152,7 +152,7 @@ export default function CV() {
         </section>
 
         {/* Research Experience */}
-        <section className="mb-12 cv-section">
+        {/* <section className="mb-12 cv-section">
           <h2 className="text-2xl font-bold text-slate-800 dark:text-white mb-6">
             Research Experience
           </h2>
@@ -198,10 +198,10 @@ export default function CV() {
               </div>
             ))}
           </div>
-        </section>
+        </section> */}
 
         {/* Awards */}
-        <section className="mb-12 cv-section">
+        {/* <section className="mb-12 cv-section">
           <h2 className="text-2xl font-bold text-slate-800 dark:text-white mb-6">
             Honors and Awards
           </h2>
@@ -230,10 +230,10 @@ export default function CV() {
               </div>
             ))}
           </div>
-        </section>
+        </section> */}
 
         {/* Teaching Experience */}
-        <section className="cv-section">
+        {/* <section className="cv-section">
           <h2 className="text-2xl font-bold text-slate-800 dark:text-white mb-6">
             Teaching Experience
           </h2>
@@ -260,7 +260,7 @@ export default function CV() {
               </div>
             ))}
           </div>
-        </section>
+        </section> */}
       </main>
 
       <Footer />

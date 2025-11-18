@@ -5,7 +5,7 @@ type: "Autonomous Systems"
 technologies: ["Research", "Reinforcement Learning", "Ray"]
 # demo: "https://arxiv.org/pdf/2412.11215"
 # source: "https://github.com/nathan-t4/NPHDAE"
-description: "Internship project at NASA Ames exploring autonomous air traffic control"
+description: "Internship project at NASA Ames exploring autonomous air traffic control."
 active: true
 ---
 

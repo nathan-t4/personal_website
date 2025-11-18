@@ -50,10 +50,15 @@ export default function Home() {
           </div>
 
           <div className="border border-slate-200 dark:border-slate-700 rounded-lg p-4 mb-6 bg-slate-50 dark:bg-slate-800/50">
-            <p 
-              className="text-lg text-slate-600 dark:text-slate-300"
-              dangerouslySetInnerHTML={{ __html: siteConfig.currentlyWorking }}
-            />
+            <ul className="list-disc list-inside space-y-2">
+              {siteConfig.currentlyWorking.map((item, index) => (
+                <li 
+                  key={index}
+                  className="text-lg text-slate-600 dark:text-slate-300"
+                  dangerouslySetInnerHTML={{ __html: item }}
+                />
+              ))}
+            </ul>
           </div>
         </section>
 

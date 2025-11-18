@@ -6,7 +6,7 @@ technologies: ["Robotics", "Mechanical Design"] # , "Physics-Informed Machine Le
 # demo: "https://arxiv.org/pdf/2412.11215"
 # source: "https://github.com/nathan-t4/NPHDAE"
 description: "Designed custom 3D-printed gearbox for robotics."
-active: true
+active: false
 ---
 
 ## Overview

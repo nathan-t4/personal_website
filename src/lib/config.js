@@ -11,7 +11,8 @@ export const siteConfig = {
   about: "I received my MS from UT Austin in 2025, and BS from UIUC in 2022. During my MS, I developed machine learning algorithms for scalable electrical network modeling and human activity recognition using batteryless sensors. This past summer (2025), I was a research intern at NASA Ames Research Center. Interested in AI agents, deep learning, generative AI, and humanoid robots.",
   currentlyWorking: [
     "Automatically create agent workflows Python code from text documents using <a href='https://github.com/nathan-t4/metaagent' target='_blank' rel='noopener noreferrer' class='text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 underline'>MetaAgent</a>.",
-    "Building <a href='https://murcanti.com' target='_blank' rel='noopener noreferrer' class='text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 underline'>Murcanti</a> for Taiwan-U.S. shipping. Try the <a href='https://murcanti.com/search' target='_blank' rel='noopener noreferrer' class='text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 underline'>Product Recommender agent</a>!",
+    "Building <a href='https://murcanti.com' target='_blank' rel='noopener noreferrer' class='text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 underline'>Murcanti</a> for Taiwan-U.S. shipping. Try the <a href='https://murcanti.com/search' target='_blank' rel='noopener noreferrer' class='text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 underline'>Product Recommender chatbot</a>!",
+    "Create your own wedding website for your special day using <a href='https://yourinvited.dev' target='_blank' rel='noopener noreferrer' class='text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 underline'>YourInvited</a>."
   ],
   socialLinks: [
     {

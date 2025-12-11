@@ -6,7 +6,7 @@ technologies: ["Robotics", "Mechanical Design", "Reinforcement Learning"]
 # demo: "https://arxiv.org/pdf/2412.11215"
 source: "https://github.com/nathan-t4/legged_gym/"
 description: "Designed actuated tail for quadruped robots to enhance stability."
-active: false
+active: true
 ---
 
 ## Abstract

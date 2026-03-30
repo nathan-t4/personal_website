@@ -1,11 +1,13 @@
 ---
 title: "Causal Diffusion Guidance"
+category: "research"
 year: "2025"
 type: "Generative AI"
 technologies: ["Research", "Generative AI", "Python", "PyTorch"]
 demo: "#"
 source: "#"
 description: "Working towards diffusion models capable of causal counterfactual reasoning."
+image: "/projects/causal_diffusion/morpho_mnist_causal_diagram.png"
 active: true
 ---
 *work in progress*

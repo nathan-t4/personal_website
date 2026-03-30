@@ -1,65 +1,79 @@
 import { getAllProjects } from '@/lib/markdown';
-import { siteConfig } from '@/lib/config';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import ProjectCard from '@/components/ui/ProjectCard';
+
+const CATEGORY_SECTION_ORDER = ['research', 'robotics'];
+
+function formatCategoryHeading(category) {
+  if (!category) return 'Uncategorized';
+  return category.charAt(0).toUpperCase() + category.slice(1);
+}
+
+function groupProjectsByCategory(projects) {
+  const groups = projects.reduce((acc, project) => {
+    const category = project.frontmatter.category || 'Uncategorized';
+    if (!acc[category]) acc[category] = [];
+    acc[category].push(project);
+    return acc;
+  }, {});
+
+  const keys = Object.keys(groups);
+  keys.sort((a, b) => {
+    const ia = CATEGORY_SECTION_ORDER.indexOf(a.toLowerCase());
+    const ib = CATEGORY_SECTION_ORDER.indexOf(b.toLowerCase());
+    if (ia !== -1 && ib !== -1) return ia - ib;
+    if (ia !== -1) return -1;
+    if (ib !== -1) return 1;
+    return a.localeCompare(b, undefined, { sensitivity: 'base' });
+  });
+
+  return keys.map((category) => ({
+    category,
+    heading: formatCategoryHeading(category),
+    projects: groups[category],
+  }));
+}
 
 export default function Projects() {
   const projects = getAllProjects();
+
+  const sections = groupProjectsByCategory(projects);
 
   return (
     <div className="min-h-screen bg-white dark:bg-slate-900">
       <Header currentPage="projects" />
 
-      {/* Main Content */}
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Page Header */}
         <section className="mb-16">
           <h1 className="text-4xl sm:text-5xl font-bold text-slate-800 dark:text-white mb-6">
             Projects
           </h1>
-          {/* <p className="text-xl text-slate-600 dark:text-slate-300 leading-relaxed">
-            A collection of projects I've worked on, from web applications to mobile apps and everything in between.
-          </p> */}
         </section>
 
-        {/* Projects Grid */}
-        <section className="mb-16">
-          <div className="space-y-12">
-            {projects.map((project) => (
-              <div key={project.slug} className="border-b border-slate-200 dark:border-slate-700 pb-4 last:border-b-0">
-                <div className="flex items-start justify-between mb-4">
-                  <h2 className="text-2xl font-semibold text-slate-800 dark:text-white">
-                    <a 
-                      href={`/projects/${project.slug}`}
-                      className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-                    >
-                      {project.frontmatter.title}
-                    </a>
-                  </h2>
-                  <span className="text-sm text-slate-500 dark:text-slate-400">
-                    {project.frontmatter.year}
-                  </span>
-                </div>
-                <p className="text-lg text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
-                  {project.frontmatter.description}
-                </p>
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.frontmatter.technologies.map((tech) => (
-                    <span
-                      key={tech}
-                      className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-3 py-1 rounded-full text-sm font-medium"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
+        <div className="space-y-16">
+          {sections.map(({ category, heading, projects: sectionProjects }) => (
+            <section key={category}>
+              <h2 className="text-2xl font-bold text-slate-800 dark:text-white mb-6 pb-2 border-b border-slate-200 dark:border-slate-700">
+                {heading}
+              </h2>
+              <div className="grid md:grid-cols-3 gap-6">
+                {sectionProjects.map((project) => (
+                  <ProjectCard
+                    key={project.slug}
+                    href={`/projects/${project.slug}`}
+                    title={project.frontmatter.title}
+                    image={project.frontmatter.image}
+                    description={project.frontmatter.description}
+                  />
+                ))}
               </div>
-            ))}
-          </div>
-        </section>
+            </section>
+          ))}
+        </div>
       </main>
 
       <Footer />
     </div>
   );
-} 
+}

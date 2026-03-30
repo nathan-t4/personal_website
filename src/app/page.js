@@ -63,7 +63,7 @@ export default function Home() {
         </section>
 
         {/* Featured Projects */}
-        <FeaturedProjectsServer />
+        {/* <FeaturedProjectsServer /> */}
       </main>
 
       <Footer />

@@ -1,6 +1,6 @@
 import { getProjectDescription, getAllProjects } from '@/lib/markdown';
 import { siteConfig } from '@/lib/config';
-import Image from 'next/image';
+import ProjectCard from '@/components/ui/ProjectCard';
 
 export default function FeaturedProjectsServer() {
   // Get all active projects from markdown files
@@ -17,13 +17,22 @@ export default function FeaturedProjectsServer() {
     });
 
   // Fetch project descriptions server-side
-  const projectsWithDescriptions = activeFeaturedProjects.map((project, idx) => {
+  const projectsWithDescriptions = activeFeaturedProjects.map((project) => {
     const projectId = project.link.split('/').pop();
+    const markdownProject = allProjects.find((p) => p.slug === projectId);
     try {
       const description = getProjectDescription(projectId);
-      return { ...project, description };
+      return {
+        ...project,
+        description,
+        image: markdownProject?.frontmatter?.image,
+      };
     } catch (error) {
-      return { ...project, description: 'Error loading description' };
+      return {
+        ...project,
+        description: 'Error loading description',
+        image: markdownProject?.frontmatter?.image,
+      };
     }
   });
 
@@ -33,36 +42,14 @@ export default function FeaturedProjectsServer() {
         Featured Projects
       </h3>
       <div className="grid md:grid-cols-2 gap-6">
-        {projectsWithDescriptions.map((project, idx) => (
-          <a
+        {projectsWithDescriptions.map((project) => (
+          <ProjectCard
             key={project.link}
             href={project.link}
-            className="group block bg-slate-50 dark:bg-slate-800 rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-200"
-          >
-            <div className="aspect-video bg-slate-200 dark:bg-slate-700 flex items-center justify-center overflow-hidden">
-              {project.image && project.image !== '/api/placeholder/400/250' ? (
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  width={400}
-                  height={250}
-                  className="w-full h-full object-cover"
-                />
-              ) : (
-                <div className="text-slate-400 dark:text-slate-500 text-sm">
-                  [Project Screenshot]
-                </div>
-              )}
-            </div>
-            <div className="p-6">
-              <h4 className="text-lg font-semibold text-slate-800 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                {project.title}
-              </h4>
-              <p className="text-slate-600 dark:text-slate-300 text-sm">
-                {project.description || 'No description available'}
-              </p>
-            </div>
-          </a>
+            title={project.title}
+            image={project.image}
+            description={project.description}
+          />
         ))}
       </div>
     </div>

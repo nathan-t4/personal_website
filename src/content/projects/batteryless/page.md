@@ -1,11 +1,13 @@
 ---
 title: "Human Activity Recognition using Batteryless Sensors"
+category: "research"
 year: "2025"
 type: "Applied Machine Learning"
 technologies: ["Research", "Python", "PyTorch"]
 demo: "#"
 source: "#"
 description: "Developed a low-energy and fast-inference human activity recognition algorithm for batteryless sensors."
+image: "/projects/batteryless/architecture.png"
 active: true
 ---
 

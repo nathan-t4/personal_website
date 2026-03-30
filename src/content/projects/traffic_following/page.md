@@ -1,11 +1,13 @@
 ---
 title: "Adaptive Traffic Following for Decentralized Autonomous Aircraft"
+category: "research"
 year: "2025"
 type: "Autonomous Systems"
 technologies: ["Research", "Reinforcement Learning", "Ray"]
 # demo: "https://arxiv.org/pdf/2412.11215"
 # source: "https://github.com/nathan-t4/NPHDAE"
 description: "Internship project at NASA Ames exploring autonomous air traffic control."
+image: "/projects/traffic_following/sim.png"
 active: true
 ---
 

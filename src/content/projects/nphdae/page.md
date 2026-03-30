@@ -1,11 +1,13 @@
 ---
 title: "Neural Port-Hamiltonian Differential Algebraic Equations"
+category: "research"
 year: "2024"
 type: "Applied Machine Learning"
 technologies: ["Research", "Physics-Informed Machine Learning", "Python", "JAX"]
 demo: "https://arxiv.org/pdf/2412.11215"
 source: "https://github.com/nathan-t4/NPHDAE"
 description: "Developed compositional learning algorithms for coupled dynamical systems."
+image: "/projects/nphdae/architecture.png"
 active: true
 ---
 *Accepted to CDC 2025.*

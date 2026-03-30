@@ -1,11 +1,13 @@
 ---
 title: "MetaAgent: Text Instructions to Agentic Workflows"
+category: "research"
 year: "2025"
 type: "AI Agents"
 technologies: ["AI Agents", "Generative AI", "Python", "PyTorch"]
 demo: "#"
 source: "#"
 description: "Automatically create agent workflows Python code from text documents using MetaAgent."
+image: "/projects/metaagent/workflow.png"
 active: true
 ---
 

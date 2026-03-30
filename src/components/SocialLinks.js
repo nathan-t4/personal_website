@@ -10,6 +10,8 @@ export default function SocialLinks({ variant = 'default', excludeCV = false }) 
         return <Image src="/github.svg" alt="GitHub" width={variant === 'contact' ? 24 : 20} height={variant === 'contact' ? 24 : 20} />;
       case 'linkedin':
         return <Image src="/linkedin.svg" alt="LinkedIn" width={variant === 'contact' ? 24 : 20} height={variant === 'contact' ? 24 : 20} />;
+      case 'scholar':
+        return <Image src="/google_scholar.png" alt="Google Scholar" width={variant === 'contact' ? 24 : 20} height={variant === 'contact' ? 24 : 20} />;
       default:
         return <span className={variant === 'contact' ? 'text-2xl' : 'text-lg'}>{iconName}</span>;
     }

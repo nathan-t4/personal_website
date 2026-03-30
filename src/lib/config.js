@@ -10,6 +10,7 @@ export const siteConfig = {
   heroBlurb: "AI Engineer with experience training models, deploying AI agents, developing full-stack websites, and controlling robots.",
   about: "I received my MS from UT Austin in 2025, and BS from UIUC in 2022. During my MS, I developed machine learning algorithms for scalable electrical network modeling and human activity recognition using batteryless sensors. This past summer (2025), I was a research intern at NASA Ames Research Center. Interested in AI agents, deep learning, generative AI, and humanoid robots.",
   currentlyWorking: [
+    "Translate images with <a href='https://www.translatenets.com' target='_blank' rel='noopener noreferrer' class='text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 underline'>TranslateNets</a>.",
     "Building <a href='https://murcanti.com' target='_blank' rel='noopener noreferrer' class='text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 underline'>Murcanti</a> for Taiwan-U.S. shipping. Try the <a href='https://murcanti.com/search' target='_blank' rel='noopener noreferrer' class='text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 underline'>Product Recommender chatbot</a>!",
     "Automatically create agent workflows Python code from text documents using <a href='https://github.com/nathan-t4/metaagent' target='_blank' rel='noopener noreferrer' class='text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 underline'>MetaAgent</a>.",
     "Create your own wedding website for your special day using <a href='https://yourinvited.dev' target='_blank' rel='noopener noreferrer' class='text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 underline'>YourInvited</a>."
@@ -24,6 +25,11 @@ export const siteConfig = {
       name: "LinkedIn",
       url: "https://linkedin.com/in/nathan-tsao",
       icon: "linkedin"
+    },
+    {
+      name: "Google Scholar",
+      url: "https://scholar.google.com/citations?user=Ot5yvmsAAAAJ&hl=en",
+      icon: "scholar"
     },
     {
       name: "Email",
@@ -56,22 +62,18 @@ export const siteConfig = {
   featuredProjects: {
     1: {
       title: "Causal Diffusion Guidance",
-      image: "/projects/causal_diffusion/morpho_mnist_causal_diagram.png",
       link: "/projects/causal_diffusion"
     },
     2: {
       title: "Traffic Following Autonomous Aircraft",
-      image: "/projects/traffic_following/sim.png",
       link: "/projects/traffic_following"
     },
     3: {
       title: "Human Activity Recognition with Batteryless Sensors",
-      image: "/projects/batteryless/architecture.png",
       link: "/projects/batteryless"
     },
     4: {
       title: "Neural Port-Hamiltonian Differential Algebraic Equations",
-      image: "/projects/nphdae/architecture.png",
       link: "/projects/nphdae"
     }
   },

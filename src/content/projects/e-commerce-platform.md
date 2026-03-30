@@ -1,11 +1,13 @@
 ---
 title: "E-Commerce Platform"
+category: "research"
 year: "2024"
 type: "Full-Stack Web Application"
 technologies: ["React", "Node.js", "MongoDB", "Stripe"]
 demo: "#"
 source: "#"
 description: "A full-stack e-commerce solution built with React, Node.js, and MongoDB. Features include user authentication, product management, and payment processing."
+image: ""
 active: false
 ---
 

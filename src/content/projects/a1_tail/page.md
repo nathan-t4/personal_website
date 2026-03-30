@@ -1,11 +1,13 @@
 ---
 title: "A1 Tail Project"
+category: "robotics"
 year: "2022"
 type: "Robotics"
 technologies: ["Robotics", "Mechanical Design", "Reinforcement Learning"]
 # demo: "https://arxiv.org/pdf/2412.11215"
 source: "https://github.com/nathan-t4/legged_gym/"
 description: "Designed actuated tail for quadruped robots to enhance stability."
+image: "/projects/a1_tail/tail.jpg"
 active: true
 ---
 

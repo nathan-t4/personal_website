@@ -1,12 +1,14 @@
 ---
 title: "3D-Printed Quasi-Direct-Drive Gearbox"
+category: "robotics"
 year: "2022"
 type: "Robotics"
 technologies: ["Robotics", "Mechanical Design"] # , "Physics-Informed Machine Learning", "Python", "JAX"]
 # demo: "https://arxiv.org/pdf/2412.11215"
 # source: "https://github.com/nathan-t4/NPHDAE"
 description: "Designed custom 3D-printed gearbox for robotics."
-active: false
+image: "/projects/actuator/actuator.JPG"
+active: true
 ---
 
 ## Overview

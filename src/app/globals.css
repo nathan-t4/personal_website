@@ -73,3 +73,10 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+
+/* KaTeX in dark mode (matches slate prose text) */
+@media (prefers-color-scheme: dark) {
+  .prose .katex {
+    color: rgb(203 213 225);
+  }
+}

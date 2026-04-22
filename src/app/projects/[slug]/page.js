@@ -2,6 +2,8 @@ import { getProjectBySlug, getProjectSlugs } from '@/lib/markdown';
 import { siteConfig } from '@/lib/config';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
@@ -92,15 +94,16 @@ export default function ProjectPage({ params }) {
 
         {/* Project Content */}
         <article className="prose prose-slate dark:prose-invert max-w-none">
-          <ReactMarkdown 
-            remarkPlugins={[remarkGfm]}
+          <ReactMarkdown
+            remarkPlugins={[remarkMath, remarkGfm]}
+            rehypePlugins={[rehypeKatex]}
             components={{
               h1: ({ children }) => <h1 className="text-3xl font-bold text-slate-800 dark:text-white mb-6">{children}</h1>,
               h2: ({ children }) => <h2 className="text-2xl font-bold text-slate-800 dark:text-white mb-4 mt-8">{children}</h2>,
               h3: ({ children }) => <h3 className="text-xl font-semibold text-slate-800 dark:text-white mb-3 mt-6">{children}</h3>,
               p: ({ children }) => <p className="text-lg text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">{children}</p>,
-              ul: ({ children }) => <ul className="list-disc list-inside text-slate-600 dark:text-slate-300 mb-4 space-y-2">{children}</ul>,
-              ol: ({ children }) => <ol className="list-decimal list-inside text-slate-600 dark:text-slate-300 mb-4 space-y-2">{children}</ol>,
+              ul: ({ children }) => <ul className="list-disc list-outside pl-6 text-slate-600 dark:text-slate-300 mb-4 space-y-2">{children}</ul>,
+              ol: ({ children }) => <ol className="list-decimal list-outside pl-6 text-slate-600 dark:text-slate-300 mb-4 space-y-2">{children}</ol>,
               li: ({ children }) => <li className="text-slate-600 dark:text-slate-300">{children}</li>,
               strong: ({ children }) => <strong className="font-semibold text-slate-800 dark:text-white">{children}</strong>,
               a: ({ href, children }) => {

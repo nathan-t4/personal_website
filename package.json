@@ -10,11 +10,14 @@
   },
   "dependencies": {
     "gray-matter": "^4.0.3",
+    "katex": "^0.16.45",
     "next": "15.5.9",
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
     "react-markdown": "^10.1.0",
-    "remark-gfm": "^4.0.1"
+    "rehype-katex": "^7.0.1",
+    "remark-gfm": "^4.0.1",
+    "remark-math": "^6.0.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

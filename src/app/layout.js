@@ -1,4 +1,5 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import "katex/dist/katex.min.css";
 import "./globals.css";
 import { siteConfig } from '@/lib/config';
 

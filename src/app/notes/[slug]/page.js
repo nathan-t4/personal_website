@@ -3,9 +3,11 @@ import { siteConfig } from '@/lib/config';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
+import remarkStripHtmlComments from '@/lib/remarkStripHtmlComments';
 import rehypeKatex from 'rehype-katex';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { MarkdownPre } from '@/components/MarkdownPre';
 import Link from 'next/link';
 
 export async function generateStaticParams() {
@@ -57,9 +59,10 @@ export default function NotePage({ params }) {
           {/* Note Content */}
           <div className="prose prose-slate dark:prose-invert max-w-none">
             <ReactMarkdown
-              remarkPlugins={[remarkMath, remarkGfm]}
+              remarkPlugins={[remarkStripHtmlComments, remarkMath, remarkGfm]}
               rehypePlugins={[rehypeKatex]}
               components={{
+                pre: MarkdownPre,
                 h1: ({ children }) => <h1 className="text-3xl font-bold text-slate-800 dark:text-white mb-6 mt-8">{children}</h1>,
                 h2: ({ children }) => <h2 className="text-2xl font-bold text-slate-800 dark:text-white mb-4 mt-8">{children}</h2>,
                 h3: ({ children }) => <h3 className="text-xl font-semibold text-slate-800 dark:text-white mb-3 mt-6">{children}</h3>,
@@ -75,9 +78,9 @@ export default function NotePage({ params }) {
                     return <code className="bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 px-1 py-0.5 rounded text-sm">{children}</code>;
                   }
                   return (
-                    <pre className="bg-slate-100 dark:bg-slate-800 p-4 rounded-lg overflow-x-auto mb-4">
-                      <code className="text-slate-800 dark:text-slate-200 text-sm">{children}</code>
-                    </pre>
+                    <code className={`${className} text-slate-800 dark:text-slate-200 text-sm`}>
+                      {children}
+                    </code>
                   );
                 },
                 blockquote: ({ children }) => (

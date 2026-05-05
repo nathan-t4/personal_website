@@ -1,18 +1,23 @@
 ---
-title: "Programming LLMs into AI Agents"
-description: "Defining AI Agents and exploring the open-source implementation in LangChain."
-date: "2026-04-24"
+title: "Harnesses turn LLMs into AI Agents"
+description: "Exploring the open-source implementations of AI agents in LangChain."
+date: "2026-05-05"
 category: "AI Agents"
 readTime: "8 min read"
-active: false
+active: true
 ---
 
-In the previous post, we mentioned that an agent harness is composed of all information provided to an agent to augment the agent's ability, and that in practice, this amounts to adding MCPs, skills, prompts, and more.
+In the [previous post](https://www.nathantsao.com/notes/ai-agents-harness), we mentioned that an agent harness is composed of all information provided to an agent to augment the agent's ability, and that in practice, this amounts to adding MCPs, skills, prompts, and more.
 
-However, this definition is missing the reasoning component of AI agents. How do we turn an LLM (a powerful next-token predictor) into an AI agent? 
-<!-- Let us first layout a few fundamental definitions and then go on to review the implementations of a few powerful open-source AI agents. -->
+However, this definition is missing the reasoning component of AI agents, and it begs the question:
 
-LLMs are next-token predictors that returns the next-token distribution given a set of context tokens $c_t$. After a new token is generated, there is a context update function $f$ which recursively updates the context $c_t$. In many systems, such as chatbots for example, the update function $f$ is simply list concatenation. 
+***How do we turn an LLM (a powerful next-token predictor) into an AI agent?***
+
+In this post, we show that an LLM is turned into a useful AI agent through the implementation of an AI agent harness. Let's see what this means in more detail below.
+
+# Harnesses enforce a state machine on the LLM for "reasoning"
+
+Recall that LLMs are next-token predictors that returns the next-token distribution given a set of context tokens $c_t$. After a new token is generated, there is a context update function $f$ which recursively updates the context $c_t$. In many systems, such as chatbots for example, the update function $f$ is simply list concatenation. 
 $$$
 x_t \sim p_{\theta}(c_{t-1}), \qquad c_t = f(c_{t-1}, x_t)
 $$$
@@ -43,9 +48,12 @@ stateDiagram-v2
   Act --> [*] : Final Answer
 ```
 
-Let's take a look at a few real-world implementations of AI agents.
 
-## LangChain / LangGraph `create_agent`
+# Open-source implementations of AI harnesses 
+
+Let's take a look at a few (only one right now....) real-world implementations of AI agents.
+
+## LangChain / LangGraph (`create_agent`)
 
 The main [`create_agent`](https://github.com/langchain-ai/langchain/blob/master/libs/langchain_v1/langchain/agents/factory.py#L691) function in LangChain uses LangGraph under the hood, which is a programming library that defines AI-augmented workflows as state-based directed graphs. A global agent state is initialized at the starting node, and the agent state is iteratively updated as the agent traverses the graph. Transitions happen when a certain criterion is met, and the agent is terminated only when it reaches an end state. 
 
@@ -96,14 +104,23 @@ def create_agent():
 
 ## MCPs and Agent Skills are tool abstractions
 
-Model Context Protocol servers (MCPs) are simply agent tools that are developed and hosted by other developers. For the agent to know what tools are available, the agent can send an HTTPS query to the MCP server to get back a `.md` description of all the available tools. Then, when the LLM decides to call the MCP server tools with some LLM-determined parameters, the agent sends a JSON remote procedure calls (RPC) to execute the selected MCP server tool on the MCP server, and the result is sent back to the agent. 
+Model Context Protocol servers (MCPs) are simply agent tools that are developed and hosted by other developers. For the agent to know what tools are available, the agent can send an HTTPS query to the MCP server to get back a `.md` description of all the available tools. Then, when the LLM decides to call the MCP server tools with some LLM-determined parameters, the agent sends a JSON remote procedure calls (RPC) to execute the selected MCP server tool on the MCP server, and the result is sent back to the agent. MCPs are exposed to the agents using a `.mcp.json` configuration file.
 
 Agent Skills are simply agent tools that are (usually) stored on the filesystem of the agent runtime computer. For the agent to know what tools are available, the agent is given the filesystem path to all the skills folders and queries each skills folder to get a `.md` description of all the available tools (this operation itself is a tool, called `load_skills` in LangChain). The tools here are often executable scripts (`.sh` or `.py` are common) that the LLM can run itself (e.g. when exposed with a `bash` tool). Then, when the LLM decides to which agent skills tools with some LLM-determined parameters, the agent executes the selected skill by usually calling the `bash` tool, and the result is sent back to the agent.
 ```
 bash ./<path_to_skill_tool> --arg1 --arg2
 ```
 
-## Memories augment LLM context
+As an example, let us examine how MCPs and Skills are loaded in the LangChain agent harness [deepagents](https://github.com/langchain-ai/deepagents/tree/main).
+
+- MCPs (`.mcp.json`) and local memory files (`CLAUDE.md`, `AGENTS.md`) are injected to the system prompt using a `LocalContextMiddleware` in the deepagents implementation ([source](https://github.com/langchain-ai/deepagents/blob/78cb42c1f57f83b90c4e2d91002967b1bfc047e6/libs/cli/deepagents_cli/agent.py#L1205-L1210)), and
+- Agent Skills are injected into the system prompt using a `SkillsMiddleware` ([source](https://github.com/langchain-ai/deepagents/blob/78cb42c1f57f83b90c4e2d91002967b1bfc047e6/libs/cli/deepagents_cli/agent.py#L1170-L1175)).
+
+![ByteByteGo MCP vs Skills](/media/MCPvsSkills_BBG.webp)
+*Figure 1. ByteByteGo MCP vs Skills Diagram [[1]]*
+
+
+<!-- ## Memories augment LLM context
 
 LangChain uses two main types of memory, short- and long-term. Short-term memories contain the entire context history of the agent and are stored in [Checkpoints](). For example, a chatbot's raw short-term memory contains the system prompt, raw agent responses (including reasoning traces and tool calls), and user responses. Alternatively, long-term memory is persistent information (e.g. `AGENTS.md`) that the agent decides to save in a [Store]() because it might be useful for the future. Examples include information about the user (e.g. preferences, background), past behavior that led to agent insights (episodic), and system prompts. 
 
@@ -111,19 +128,18 @@ How are memories used by the agent?
 
 Short-term memory is often first processed from its raw (saved) format and then loaded into the LLM context window.
 
-Long-term memory is retrieved during the main agent loop (or in system prompt?)
+Long-term memory is retrieved during the main agent loop (or in system prompt?) -->
 
 <!-- Tools vs Middleware (middleware are also just tools? not quite, they also take in the context / previous messages too (customize agent behavior
     between steps in the main agent loop from [langchain](https://github.com/langchain-ai/langchain/blob/master/libs/langchain_v1/langchain/agents/middleware/types.py#L380)). [summarization middleware](https://github.com/langchain-ai/langchain/blob/master/libs/langchain_v1/langchain/agents/middleware/summarization.py)) -->
 
 
-# More open-source agent implementations
+<!-- # More open-source agent implementations
 
 [deepagents Agent Loop](https://github.com/langchain-ai/deepagents/blob/main/libs/deepagents/deepagents/graph.py#L218) (`libs/deepagents/deepagents/graph.py`)
 
 [OpenClaw Agent Loop](https://github.com/openclaw/openclaw/blob/main/src/agents/pi-embedded-runner/run.ts#L237) (`src/agents/pi-embedded-runner/run.ts`)
 
-[OpenCode Agent Loop](https://github.com/anomalyco/opencode/blob/dev/packages/opencode/src/session/prompt.ts) (`packages/opencode/src/session/prompt.ts`)
+[OpenCode Agent Loop](https://github.com/anomalyco/opencode/blob/dev/packages/opencode/src/session/prompt.ts) (`packages/opencode/src/session/prompt.ts`) -->
 
----
-TODO: make into interactive experience.
+[1]: https://blog.bytebytego.com/p/ep213-mcp-vs-skills-clearly-explained

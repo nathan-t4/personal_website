@@ -1,5 +1,5 @@
 ---
-title: "Evaluating Agent Harnesses"
+title: "Evaluating AI Agent Harnesses"
 description: "An in-progress framework for thinking about and comparing agent harnesses."
 date: "2026-04-22"
 category: "AI Agents"

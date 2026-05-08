@@ -43,7 +43,7 @@ The above is a simple framework to reason about how to evaluate agent harnesses.
 
 The question that remains is how can we built better agent harnesses? At a high level, we can only try to modify the base LLM $p_{\theta}$ (fine-tuning) or the harness implementation (e.g. system prompt, retrieval augmentation, exposing tools and MCPs, subagents, and more).
 
-***If this post interests you, please reach out!***
+***If this post interests you, please [reach out](https://www.nathantsao.com/contact)!***
 
 [1] https://www.youtube.com/watch?v=it8g45WERAQ
 

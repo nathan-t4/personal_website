@@ -1,6 +1,6 @@
 ---
-title: "Harnesses turn LLMs into AI Agents"
-description: "Exploring the open-source implementations of AI agents in LangChain."
+title: "LLM + Harness = AI Agents"
+description: "How to we implement agent harnesses? What is an AI agent?"
 date: "2026-05-05"
 category: "AI Agents"
 readTime: "8 min read"
@@ -15,7 +15,7 @@ However, this definition is missing the reasoning component of AI agents, and it
 
 In this post, we show that an LLM is turned into a useful AI agent through the implementation of an AI agent harness. Let's see what this means in more detail below.
 
-# Harnesses enforce a state machine on the LLM for "reasoning"
+# LLM + Harness = AI Agent
 
 Recall that LLMs are next-token predictors that returns the next-token distribution given a set of context tokens $c_t$. After a new token is generated, there is a context update function $f$ which recursively updates the context $c_t$. In many systems, such as chatbots for example, the update function $f$ is simply list concatenation. 
 $$$
@@ -51,7 +51,7 @@ stateDiagram-v2
 
 # Open-source implementations of AI harnesses 
 
-Let's take a look at a few (only one right now....) real-world implementations of AI agents.
+Let's take a look at a few (just one for now) real-world implementations of AI agents.
 
 ## LangChain / LangGraph (`create_agent`)
 
@@ -118,6 +118,14 @@ As an example, let us examine how MCPs and Skills are loaded in the LangChain ag
 
 ![ByteByteGo MCP vs Skills](/media/MCPvsSkills_BBG.webp)
 *Figure 1. ByteByteGo MCP vs Skills Diagram [[1]]*
+
+# Conclusion
+
+In this post, we introduced the practical aspects of an AI agent harness, starting with an introduction of the main agent loop and all the engineering around prompting an LLM to behave as a state-machine, execute tools, and ultimately transform from a LLM to a useful AI agent. We also did a deep-dive on one of the most popular agent frameworks, LangChain, to see how real-world harnesses are implemented so that AI agents can remember (memories like CLAUDE.md), learn do interact with external software systems through MCPs, and perform customized behaviors through Agent Skills. 
+
+All the above is just the very beginning though! For a production-level harness, there are problems of authorization (running `rm` with the bash tool seems dangerous), human feedback (requesting permission to execute tools or additional information from the user), spawning and orchestrating subagents, context management, cost optimizations (caching tokens can be 10x cheaper!), and much much more. 
+
+Nevertheless, I hope you found this post helpful. Please [*reach out*](https://www.nathantsao.com/contact) if you have any thoughts or questions!
 
 
 <!-- ## Memories augment LLM context

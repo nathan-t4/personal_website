@@ -7,8 +7,8 @@ export const siteConfig = {
   resume: "/files/Nathan_Tsao_resume.pdf",
   emailAddress: "tsao.nathan@gmail.com",
   location: "Taipei, Taiwan",
-  heroBlurb: "AI Engineer with experience training models, deploying AI agents, developing full-stack websites, and controlling robots.",
-  about: "I received my MS from UT Austin in 2025, and BS from UIUC in 2022. During my MS, I developed machine learning algorithms for scalable electrical network modeling and human activity recognition using batteryless sensors. This past summer (2025), I was a research intern at NASA Ames Research Center. Interested in AI agents, deep learning, generative AI, and humanoid robots.",
+  // heroBlurb: "AI Engineer with experience training models, deploying AI agents, developing full-stack websites, and controlling robots.",
+  about: "I received my MS from UT Austin in 2025, and BS from UIUC in 2022. During my MS, I developed innovative machine learning algorithms to solve practical problems. I currently work as an Applied Scientist developing AI solutions for a SaaS company, and was previously a research intern at NASA Ames Research Center. Interested in AI agents, deep learning, generative AI, and humanoid robots.",
   currentlyWorking: [
     "Translate images with <a href='https://www.translatenets.com' target='_blank' rel='noopener noreferrer' class='text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 underline'>TranslateNets</a>.",
     "Building <a href='https://murcanti.com' target='_blank' rel='noopener noreferrer' class='text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 underline'>Murcanti</a> for Taiwan-U.S. shipping. Try the <a href='https://murcanti.com/search' target='_blank' rel='noopener noreferrer' class='text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 underline'>Product Recommender chatbot</a>!",

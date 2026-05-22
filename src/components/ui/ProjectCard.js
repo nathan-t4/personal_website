@@ -1,4 +1,7 @@
+'use client';
+
 import Image from 'next/image';
+import posthog from 'posthog-js';
 
 const PLACEHOLDER_IMAGE = '/api/placeholder/400/250';
 
@@ -8,6 +11,7 @@ export default function ProjectCard({ href, title, image, description }) {
   return (
     <a
       href={href}
+      onClick={() => posthog.capture('project_card_clicked', { project_title: title, href })}
       className="group block bg-slate-50 dark:bg-slate-800 rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-200"
     >
       <div className="aspect-video bg-slate-200 dark:bg-slate-700 flex items-center justify-center overflow-hidden">

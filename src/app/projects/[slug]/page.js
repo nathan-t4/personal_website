@@ -9,6 +9,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { MarkdownPre } from '@/components/MarkdownPre';
 import Link from 'next/link';
+import ProjectLinkButtons from '@/components/ProjectLinkButtons';
 
 export async function generateStaticParams() {
   const slugs = getProjectSlugs();
@@ -73,24 +74,12 @@ export default function ProjectPage({ params }) {
           </div>
 
           <div className="pt-8 border-slate-200 dark:border-slate-700">
-            <div className="flex gap-4">
-              {frontmatter.demo && frontmatter.demo !== '#' && (
-                <a
-                  href={frontmatter.demo}
-                  className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200"
-                >
-                  {frontmatter.technologies.includes('Research') ? 'Paper' : 'View Live Demo'}
-                </a>
-              )}
-              {frontmatter.source && frontmatter.source !== '#' && (
-                <a
-                  href={frontmatter.source}
-                  className="border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200"
-                >
-                  View Source Code
-                </a>
-              )}
-            </div>
+            <ProjectLinkButtons
+              title={frontmatter.title}
+              demo={frontmatter.demo}
+              source={frontmatter.source}
+              technologies={frontmatter.technologies}
+            />
           </div>
         </section>
 

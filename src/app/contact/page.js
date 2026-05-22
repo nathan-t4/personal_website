@@ -4,15 +4,17 @@ import { siteConfig } from '@/lib/config';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import SocialLinks from '@/components/SocialLinks';
+import posthog from 'posthog-js';
 
 function EmailLink() {
   const displayEmail = siteConfig.emailAddress.replace('@', '{at}');
-  
+
   return (
-    <a 
+    <a
       href="javascript:void(0)"
       onClick={(e) => {
         e.preventDefault();
+        posthog.capture('contact_email_clicked', { source: 'contact_page' });
         window.location.href = 'mailto:' + siteConfig.emailAddress;
       }}
       className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium"

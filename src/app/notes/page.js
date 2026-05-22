@@ -2,6 +2,7 @@ import { getAllNotes } from '@/lib/markdown';
 import { siteConfig } from '@/lib/config';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import NoteReadLink from '@/components/NoteReadLink';
 
 export default function Notes() {
   const allNotes = getAllNotes();
@@ -51,12 +52,14 @@ export default function Notes() {
               >
                 <div className="flex items-start justify-between mb-4">
                   <h2 className="text-2xl font-semibold text-slate-800 dark:text-white">
-                    <a 
+                    <NoteReadLink
                       href={`/notes/${note.slug}`}
+                      slug={note.slug}
+                      title={note.frontmatter.title}
                       className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                     >
                       {note.frontmatter.title}
-                    </a>
+                    </NoteReadLink>
                   </h2>
                   <div className="flex items-center space-x-3 text-sm text-slate-500 dark:text-slate-400">
                     <span>{new Date(note.frontmatter.date).toLocaleDateString('en-US', { 
@@ -77,12 +80,14 @@ export default function Notes() {
                       {note.frontmatter.category}
                     </span>
                   </div>
-                  <a
+                  <NoteReadLink
                     href={`/notes/${note.slug}`}
+                    slug={note.slug}
+                    title={note.frontmatter.title}
                     className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 text-sm font-medium"
                   >
                     Read more →
-                  </a>
+                  </NoteReadLink>
                 </div>
               </article>
             ))}

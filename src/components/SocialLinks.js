@@ -2,6 +2,7 @@
 
 import { siteConfig } from '@/lib/config';
 import Image from 'next/image';
+import posthog from 'posthog-js';
 
 export default function SocialLinks({ variant = 'default', excludeCV = false }) {
   const getIcon = (iconName) => {
@@ -47,8 +48,11 @@ export default function SocialLinks({ variant = 'default', excludeCV = false }) 
           rel={link.name === 'CV' ? 'noopener noreferrer' : undefined}
           onClick={link.isEmail ? (e) => {
             e.preventDefault();
+            posthog.capture('social_link_clicked', { platform: link.icon, link_name: link.name });
             window.location.href = 'mailto:' + siteConfig.emailAddress;
-          } : undefined}
+          } : () => {
+            posthog.capture('social_link_clicked', { platform: link.icon, link_name: link.name });
+          }}
           className={linkClasses}
         >
           {getIcon(link.icon)}

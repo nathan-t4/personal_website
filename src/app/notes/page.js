@@ -50,7 +50,7 @@ export default function Notes() {
                 className="note-item border-b border-slate-200 dark:border-slate-700 pb-4 last:border-b-0"
                 data-category={note.frontmatter.category}
               >
-                <div className="flex items-start justify-between mb-4">
+                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-4">
                   <h2 className="text-2xl font-semibold text-slate-800 dark:text-white">
                     <NoteReadLink
                       href={`/notes/${note.slug}`}
@@ -61,14 +61,14 @@ export default function Notes() {
                       {note.frontmatter.title}
                     </NoteReadLink>
                   </h2>
-                  <div className="flex items-center space-x-3 text-sm text-slate-500 dark:text-slate-400">
+                  <div className="flex items-center space-x-3 text-sm text-slate-500 dark:text-slate-400 sm:shrink-0">
                     <span>{new Date(note.frontmatter.date).toLocaleDateString('en-US', { 
                       year: 'numeric', 
                       month: 'long', 
                       day: 'numeric' 
                     })}</span>
-                    <span>•</span>
-                    <span>{note.frontmatter.readTime}</span>
+                    <span className="hidden sm:inline">•</span>
+                    <span className="hidden sm:inline">{note.frontmatter.readTime}</span>
                   </div>
                 </div>
                 <p className="text-lg text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
@@ -80,14 +80,6 @@ export default function Notes() {
                       {note.frontmatter.category}
                     </span>
                   </div>
-                  <NoteReadLink
-                    href={`/notes/${note.slug}`}
-                    slug={note.slug}
-                    title={note.frontmatter.title}
-                    className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 text-sm font-medium"
-                  >
-                    Read more →
-                  </NoteReadLink>
                 </div>
               </article>
             ))}

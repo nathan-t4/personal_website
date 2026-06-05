@@ -33,7 +33,7 @@ export default function SocialLinks({ variant = 'default', excludeCV = false }) 
   const linksToShow = excludeCV
     ? siteConfig.socialLinks.filter((link) => link.name !== 'CV')
     : siteConfig.socialLinks.map(link => 
-        link.name === 'CV' 
+        link.name === 'Resume' 
           ? { ...link, url: siteConfig.resume }  // Use PDF URL instead of /cv
           : link
       );
@@ -44,8 +44,8 @@ export default function SocialLinks({ variant = 'default', excludeCV = false }) 
         <a
           key={link.name}
           href={link.url}
-          target={link.name === 'CV' ? '_blank' : undefined}
-          rel={link.name === 'CV' ? 'noopener noreferrer' : undefined}
+          target={link.name === 'Resume' ? '_blank' : undefined}
+          rel={link.name === 'Resume' ? 'noopener noreferrer' : undefined}
           onClick={link.isEmail ? (e) => {
             e.preventDefault();
             posthog.capture('social_link_clicked', { platform: link.icon, link_name: link.name });

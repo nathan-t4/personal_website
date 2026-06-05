@@ -28,9 +28,9 @@ export default function CV() {
               onClick={() => window.open(siteConfig.resume, '_blank')}
               className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 underline cursor-pointer font-medium"
             >
-              CV
+              resume
             </button>
-            {" for the most updated version (10/15/2025)."}
+            {" for the most updated version (05/2026)."}
           </p>
         </section>
         {/* Contact Info */}

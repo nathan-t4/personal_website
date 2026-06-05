@@ -11,7 +11,7 @@ export default function Header({ currentPage = '', showTitle = true }) {
     { href: '/projects', label: 'Projects' },
     { href: '/notes', label: 'Notes' },
     { href: '/contact', label: 'Contact' },
-    { href: '/cv', label: 'CV' }
+    { href: '/cv', label: 'Resume' }
   ];
 
   // Close dropdown when clicking outside

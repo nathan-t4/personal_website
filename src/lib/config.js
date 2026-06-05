@@ -8,13 +8,14 @@ export const siteConfig = {
   emailAddress: "tsao.nathan@gmail.com",
   location: "Taipei, Taiwan",
   // heroBlurb: "AI Engineer with experience training models, deploying AI agents, developing full-stack websites, and controlling robots.",
-  about: "I received my MS from UT Austin in 2025, and BS from UIUC in 2022. During my MS, I developed innovative machine learning algorithms to solve practical problems. I currently work as an Applied Scientist developing AI solutions for a SaaS company, and was previously a research intern at NASA Ames Research Center. Interested in AI agents, deep learning, generative AI, and humanoid robots.",
-  currentlyWorking: [
-    "Translate images with <a href='https://www.translatenets.com' target='_blank' rel='noopener noreferrer' class='text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 underline'>TranslateNets</a>.",
-    "Building <a href='https://murcanti.com' target='_blank' rel='noopener noreferrer' class='text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 underline'>Murcanti</a> for Taiwan-U.S. shipping. Try the <a href='https://murcanti.com/search' target='_blank' rel='noopener noreferrer' class='text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 underline'>Product Recommender chatbot</a>!",
-    "Automatically create agent workflows Python code from text documents using <a href='https://github.com/nathan-t4/metaagent' target='_blank' rel='noopener noreferrer' class='text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 underline'>MetaAgent</a>.",
-    "Create your own wedding website for your special day using <a href='https://yourinvited.dev' target='_blank' rel='noopener noreferrer' class='text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 underline'>YourInvited</a>."
-  ],
+  about: "I currently work as an Applied Scientist, and was previously a research intern at NASA Ames Research Center. I received my MS from UT Austin in 2025, and BS from UIUC in 2022.",
+  // currentlyWorking: [
+  //   "Translate images with <a href='https://www.translatenets.com' target='_blank' rel='noopener noreferrer' class='text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 underline'>TranslateNets</a>.",
+  //   "Building <a href='https://murcanti.com' target='_blank' rel='noopener noreferrer' class='text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 underline'>Murcanti</a> for Taiwan-U.S. shipping. Try the <a href='https://murcanti.com/search' target='_blank' rel='noopener noreferrer' class='text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 underline'>Product Recommender chatbot</a>!",
+  //   "Automatically create agent workflows Python code from text documents using <a href='https://github.com/nathan-t4/metaagent' target='_blank' rel='noopener noreferrer' class='text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 underline'>MetaAgent</a>.",
+  //   // "Create your own wedding website for your special day using <a href='https://yourinvited.dev' target='_blank' rel='noopener noreferrer' class='text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 underline'>YourInvited</a>."
+  // ],
+  // currentlyWorking: [],
   socialLinks: [
     {
       name: "GitHub",
@@ -38,7 +39,7 @@ export const siteConfig = {
       isEmail: true
     },
     {
-      name: "CV",
+      name: "Resume",
       url: "/cv",
       icon: "📄"
     }

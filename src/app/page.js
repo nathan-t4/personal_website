@@ -37,7 +37,7 @@ export default function Home() {
             <p className="text-lg text-slate-600 dark:text-slate-300 mb-6">
               {siteConfig.about}
             </p>
-            <div className="flex flex-wrap gap-2 mb-8">
+            {/* <div className="flex flex-wrap gap-2 mb-8">
               {siteConfig.skills.slice(0, siteConfig.showNSkills).map((skill) => (
                 <span
                   key={skill}
@@ -46,20 +46,22 @@ export default function Home() {
                   {skill}
                 </span>
               ))}
-            </div>
+            </div> */}
           </div>
 
-          <div className="border border-slate-200 dark:border-slate-700 rounded-lg p-4 mb-6 bg-slate-50 dark:bg-slate-800/50">
-            <ul className="list-disc list-inside space-y-2">
-              {siteConfig.currentlyWorking.map((item, index) => (
-                <li 
-                  key={index}
-                  className="text-lg text-slate-600 dark:text-slate-300"
-                  dangerouslySetInnerHTML={{ __html: item }}
-                />
-              ))}
-            </ul>
-          </div>
+          {siteConfig.currentlyWorking != null && (
+            <div className="border border-slate-200 dark:border-slate-700 rounded-lg p-4 mb-6 bg-slate-50 dark:bg-slate-800/50">
+              <ul className="list-disc list-inside space-y-2">
+                {siteConfig.currentlyWorking.map((item, index) => (
+                  <li 
+                    key={index}
+                    className="text-lg text-slate-600 dark:text-slate-300"
+                    dangerouslySetInnerHTML={{ __html: item }}
+                  />
+                ))}
+              </ul>
+            </div>
+          )}
         </section>
 
         {/* Featured Projects */}
